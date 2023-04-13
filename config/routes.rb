@@ -8,4 +8,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  devise_for :admins
+
+  namespace :api do
+    namespace :v1 do
+    resources :admins do 
+    resources :cohorts 
+    resources :projects
+    end
+  end
+end
+
 end
