@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     def logStudent
 
-        student = Student.find_by(username: login_params[:username])
+        student = Student.find_by(email: login_params[:email])
         if student&.authenticate(login_params[:password])
             session[:user_id]= student.id
             render json: student, status: :accepted
@@ -33,6 +33,6 @@ class SessionsController < ApplicationController
   private
 
     def login_params
-        params.permit(:username, :password)
+        params.permit(:email, :password)
     end
 end
