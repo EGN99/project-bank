@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
  # logging the Admin in
 
     def logAdmin
-        admin = Admin.find_by(username: login_params[:username])
+        admin = Admin.find_by(email: login_params[:email])
         if admin&.authenticate(login_params[:password])
             session[:user_id]= admin.id
             render json: admin, status: :accepted
