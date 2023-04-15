@@ -1,5 +1,5 @@
 class Admin < ApplicationRecord
-    devise :database_authentication, :registable, :recoverble, :rememberble, :validatable
+    devise :database_authentication, :registable, :recoverable, :rememberble, :validatable
 
     has_many :cohorts
     has_many :projects

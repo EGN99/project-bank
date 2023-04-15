@@ -1,11 +1,23 @@
 class AdminsController < ApplicationController
-    before_action :authenticate_admin!
+    before_action :authenticate_admin! except: [:create]
+
+    def create
+        admin = Admin.find_by(email: params[:email])
+
+        if admin && admin.valid_password?(params[:password])
+            session[:admin_id] = admin.id 
+            render json: {admin: admin}, status: :ok
+        else
+            render json: {error: "Invalid emai or password"}, status: :not_found
+        end
+    end
 
     def index
         projects = Project.all
         cohorts = Cohort.all
         render json: { projects: projects, cohorts: cohorts}, status: :ok
     end
+    
     def create_project
         project = Project.new(project_params)
         if project.save
