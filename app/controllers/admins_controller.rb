@@ -52,12 +52,26 @@ class AdminsController < ApplicationController
         end
     end
 
+    def create_user
+        user = user.new(user_params)
+        if user.save
+            render json: {status: 'success', message: 'user created successfully'}, status: :success
+        else
+            render json: {status: 'error', message: 'user creation failed'}, status: :error
+        end
+    end 
+
     private
     def project_params
-        params.require(:project).permit(:name, :category, :owner_id, :github_link)
+        params.require(:project).permit(:name, :description, :owner_id, :github_link)
     end
 
     def cohort_params
         params.require(:cohort).permit(:name, :admin_id, :category)
     end
+
+    def user_params
+        params.require(:user).permit(:email, :password, :password_confirmation, :user_name)
+    end
+
 end

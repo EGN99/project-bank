@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   
   #route for loging in an admin
-  post "/admin_login", to :"sessions#loginAdmin"
+  post "/admin_login", to: "sessions#loginAdmin"
   #route to logout
-  delete "/logout", to :"sessions#destroy"
+  delete "/logout", to: "sessions#destroy"
 
-  devise_for :admins
+  # devise_for :admins
 
   namespace :api do
     namespace :v1 do
