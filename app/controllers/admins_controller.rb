@@ -63,11 +63,11 @@ class AdminsController < ApplicationController
 
     private
     def project_params
-        params.require(:project).permit(:name, :description, :owner_id, :github_link)
+        params.require(:project).permit(:name, :description, :owner_id, :course_title, :github_link)
     end
 
     def cohort_params
-        params.require(:cohort).permit(:name, :admin_id, :category)
+        params.require(:cohort).permit(:name, :course, :no_of_students)
     end
 
     def user_params
