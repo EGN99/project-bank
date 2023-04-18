@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources :projects
   resources :cohorts
   resources :students
+
+  # routrs for courses and projects
+  resources :courses, only: [:index, :show] do 
+    resources :projects, only: [:index, :create]
+  end
+end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 
