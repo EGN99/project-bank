@@ -1,5 +1,9 @@
 class Project < ApplicationRecord
-    belongs_to :admin
-    has_and_belongs_to_many :students
     belongs_to :course
+    has_many :project_memberships
+  
+    validates :name, presence: true
+    validates :description, presence: true
+    validates :github_link, presence: true
+    validates :members, presence: true
 end

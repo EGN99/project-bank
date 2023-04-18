@@ -1,5 +1,6 @@
 class Student < ApplicationRecord
-    has_secure_password
+    has_many :projects
+    validates :username, presence: true
     validates :email, presence: true, uniqueness: true
-    has_and_belongs_to_many :projects
+    has_secure_password
 end
