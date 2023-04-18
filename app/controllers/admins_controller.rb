@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-    before_action :authenticate_admin! except: [:create]
+   skip_before_action :authenticate_admin! except: [:create]
 
     def create
         admin = Admin.find_by(email: params[:email])
