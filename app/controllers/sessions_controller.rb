@@ -4,8 +4,16 @@ class SessionsController < ApplicationController
 
     def logAdmin
         # insert code here
+       admin = Admin.find_by(email: login_params[:email])
+        if admin&.authenticate(login_params[:password])
+            session[:user_id]= student.id
+            render json: student, status: :accepted
+        else
+            render json: { error: "Invalid username or password"}, status: :not_found
+        end
         
     end
+  
 
 
 # logging the student in
