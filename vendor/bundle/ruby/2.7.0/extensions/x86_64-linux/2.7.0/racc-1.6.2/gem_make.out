@@ -1,0 +1,20 @@
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/racc-1.6.2/ext/racc/cparse
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230419-13193-xbsbhp sitelibdir\=./.gem.20230419-13193-xbsbhp clean
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230419-13193-xbsbhp sitelibdir\=./.gem.20230419-13193-xbsbhp
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230419-13193-xbsbhp sitelibdir\=./.gem.20230419-13193-xbsbhp install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20230419-13193-xbsbhp/racc
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230419-13193-xbsbhp sitelibdir\=./.gem.20230419-13193-xbsbhp clean

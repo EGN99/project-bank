@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   # routrs for courses and projects
   resources :courses, only: [:index, :show] do 
     resources :projects, only: [:index, :create]
-  end
-end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 
@@ -20,4 +19,5 @@ end
 
   # Defines the root path route ("/")
   # root "articles#index"
+end
 end
