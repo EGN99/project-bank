@@ -1,0 +1,19 @@
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/debug-1.7.2/ext/debug
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230418-28145-qutgys sitelibdir\=./.gem.20230418-28145-qutgys clean
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230418-28145-qutgys sitelibdir\=./.gem.20230418-28145-qutgys
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230418-28145-qutgys sitelibdir\=./.gem.20230418-28145-qutgys install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20230418-28145-qutgys/debug
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230418-28145-qutgys sitelibdir\=./.gem.20230418-28145-qutgys clean

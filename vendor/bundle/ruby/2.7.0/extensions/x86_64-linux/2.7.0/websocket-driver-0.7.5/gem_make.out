@@ -1,0 +1,18 @@
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230418-28145-112839n sitelibdir\=./.gem.20230418-28145-112839n clean
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230418-28145-112839n sitelibdir\=./.gem.20230418-28145-112839n
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230418-28145-112839n sitelibdir\=./.gem.20230418-28145-112839n install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20230418-28145-112839n
+
+current directory: /home/caroline/Development/code/phase5/project-bank/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230418-28145-112839n sitelibdir\=./.gem.20230418-28145-112839n clean
