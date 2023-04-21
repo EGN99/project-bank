@@ -2,6 +2,8 @@ Rails.application.routes.draw do
     resources :students, only: [:index, :password_reset]
 
   
+  resources :cohorts, only: [:index, :show, :create, :destroy]
+
     resources :courses do
       resources :projects
     end
