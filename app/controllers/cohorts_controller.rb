@@ -15,7 +15,7 @@ class CohortsController < ApplicationController
     end
 
     def destroy
-        Cohort.destroy!(params[:id])
+        Cohort.destroy(params[:id])
         head :no_content
     end
 
