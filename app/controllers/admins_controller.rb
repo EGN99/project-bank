@@ -34,24 +34,7 @@ class AdminsController < ApplicationController
             render json: {status: 'error', message: 'project deletion failed'}, :status: :error
         end
     end
-    def create_cohort
-        cohort = Cohort.new(cohort_params)
-        if cohort.save
-            render json: {status: 'success', message: 'cohort created successefully'}, status: :successefully
-        else
-            render json: {status: 'error', message: 'cohort creation failed'}, :status: :error
-        end
-    end
-
-    def delete_cohort
-        cohort = Cohort.find(params[:id])
-        if cohort.destroy
-            render json: {status: 'success', message: 'cohort deleted successfully'}, status: :success
-        else
-            render json: {status: 'error', message: 'cohort deletion failed'}, status: :error
-        end
-    end
-
+    
     def create_user
         user = user.new(user_params)
         if user.save
@@ -66,9 +49,7 @@ class AdminsController < ApplicationController
         params.require(:project).permit(:name, :description, :owner_id, :course_title, :github_link)
     end
 
-    def cohort_params
-        params.require(:cohort).permit(:name, :course, :no_of_students)
-    end
+   
 
     def user_params
         params.require(:user).permit(:email, :password, :password_confirmation, :user_name)
