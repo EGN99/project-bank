@@ -9,12 +9,8 @@ class CoursesController < ApplicationController
     
     # GET /courses/:id
     def show 
-        render json: @course 
-    end
-
-    private
-    def set_course
         @course = Course.find(params[:id])
+        render json: @course 
     end
 
 end
