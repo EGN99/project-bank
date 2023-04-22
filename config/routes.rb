@@ -13,9 +13,9 @@ Rails.application.routes.draw do
 
 
   # route for loging in a student
-    post "/studentlogin", to:"sessions#logStudent" 
-  # route to logout
-    delete "/logout", to:"sessions#destroy"
+  #   post "/studentlogin", to:"sessions#logStudent" 
+  # # route to logout
+  #   delete "/logout", to:"sessions#destroy"
 
   # Defines the root path route ("/")
   # root "articles#index"
