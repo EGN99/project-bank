@@ -2,9 +2,17 @@ Rails.application.routes.draw do
   resources :members
   resources :admins
   resources :projects
-  resources :cohorts
   resources :students
 
+  # routes for courses and projects
+  resources :courses do 
+    resources :projects
+  
+  end
+  # routes for courses and cohorts
+  resources :courses do
+    resources :cohorts 
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -21,7 +29,6 @@ Rails.application.routes.draw do
    namespace :api do
      namespace :v1 do
     resources :admins do 
-    resources :cohorts 
     resources :projects
     end
   end
