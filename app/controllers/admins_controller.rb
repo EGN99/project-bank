@@ -1,58 +1,32 @@
 class AdminsController < ApplicationController
-   skip_before_action :authenticate_admin! except: [:create]
+   # skip_before_action :authenticate_admin! except: [:create]
+
+    # def create
+    #     admin = Admin.find_by(email: params[:email])
+
+    #     if admin && admin.valid_password?(params[:password])
+    #         session[:admin_id] = admin.id 
+    #         render json: {admin: admin}, status: :ok
+    #     else
+    #         render json: {error: "Invalid emai or password"}, status: :not_found
+    #     end
+    # end
 
     def create
-        admin = Admin.find_by(email: params[:email])
+        admin = Admin.new(admin_params)
+        if admin.save
+          render json: admin, status: :created
+        else
+          render json: { errors: admin.errors.full_messages }, status: :unprocessable_entity
+        end
 
-        if admin && admin.valid_password?(params[:password])
-            session[:admin_id] = admin.id 
-            render json: {admin: admin}, status: :ok
-        else
-            render json: {error: "Invalid emai or password"}, status: :not_found
-        end
     end
 
-    def index
-        projects = Project.all
-        cohorts = Cohort.all
-        render json: { projects: projects, cohorts: cohorts}, status: :ok
-    end
-    
-    def create_project
-        project = Project.new(project_params)
-        if project.save
-            rander json {status: 'success', message: 'project created successefully'}, :status: :created
-        else
-            render json {status: 'error', message: 'project creation failed'}, :status: :error
-        end
-    end
-    def delete_project
-        project = Project.find(params[:id])
-        if project.destroy
-            render json: {status: 'success', message: 'project deleted successefully'}, :status: :success
-        else
-            render json: {status: 'error', message: 'project deletion failed'}, :status: :error
-        end
-    end
-    
-    def create_user
-        user = user.new(user_params)
-        if user.save
-            render json: {status: 'success', message: 'user created successfully'}, status: :success
-        else
-            render json: {status: 'error', message: 'user creation failed'}, status: :error
-        end
-    end 
 
     private
-    def project_params
-        params.require(:project).permit(:name, :description, :owner_id, :course_title, :github_link)
+    def admin_params
+        params.permit(:username, :password, :email)
     end
 
-   
-
-    def user_params
-        params.require(:user).permit(:email, :password, :password_confirmation, :user_name)
-    end
 
 end

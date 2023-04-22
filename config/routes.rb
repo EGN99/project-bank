@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  #sign ip for admin
+  post "/adminssignup", to:"admins#create"
   #route for loging in an admin
   post "/admin_login", to: "sessions#logAdmin"
   #route to logout
