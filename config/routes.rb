@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   resources :courses do
     resources :cohorts 
   end
+
+  #routes for students
+  resources :students, only: [:index, :create, :show]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
