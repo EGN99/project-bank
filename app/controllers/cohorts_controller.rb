@@ -1,3 +1,2 @@
 class CohortsController < ApplicationController
-
 end
