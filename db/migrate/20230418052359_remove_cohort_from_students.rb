@@ -1,5 +1,5 @@
-class RemoveCohortFromStudents < ActiveRecord::Migration[7.0]
-  def change
+class  RemoveCohortFromStudents< ActiveRecord::Migration[7.0]
+ def change
     remove_reference :students, :cohort, null: false, foreign_key: true
-  end
+end
 end

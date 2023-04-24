@@ -1,3 +1,4 @@
+
 class ProjectsController < ApplicationController
     #before_action :set_course, only: [:index, :create]
     #before_action :set_project, only: [:show]
@@ -64,3 +65,4 @@ class ProjectsController < ApplicationController
         params.permit(:name, :description, :github_link, :members)
     end
 end
+

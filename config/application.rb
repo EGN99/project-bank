@@ -1,5 +1,7 @@
 require_relative "boot"
 
+# require "devise"
+
 require "rails"
 require 'action_mailer/railtie'
 

@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.4"
 
+gem 'executable-hooks', '1.6.1'
+
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -56,3 +58,5 @@ group :development do
 
 end
 
+
+# gem "devise", "~> 4.9"
