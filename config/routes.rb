@@ -1,18 +1,9 @@
 Rails.application.routes.draw do
-  resources :members
-  resources :admins
-  resources :projects
-  resources :students
 
-  # routes for courses and projects
-  resources :courses do 
-    resources :projects
+
+  # routes for courses 
+  resources :courses 
   
-  end
-  # routes for courses and cohorts
-  resources :courses do
-    resources :cohorts 
-  end
 
   #routes for students
   resources :students, only: [:index, :create, :show]
@@ -30,11 +21,27 @@ Rails.application.routes.draw do
 
   # devise_for :admins
 
-   namespace :api do
-     namespace :v1 do
-    resources :admins do 
-    resources :projects
+   
+
+    resources :students, only: [:index, :password_reset]
+
+  
+  resources :cohorts, only: [:index, :show, :create, :destroy]
+
+    resources :courses do
+      resources :projects
     end
+    # route for loging in a student
+    post "/studentlogin", to:"sessions#logStudent" 
+    # route to logout
+    delete "/logout", to:"sessions#destroy"
+
+    post '/password_reset', to: 'sessions#password_reset'
+    get 'password_reset/:id/edit', to: 'password_reset#edit'
+    patch 'password_reset/:id', to: 'password_reset#update'
+  
+  
+
   end
 end
 

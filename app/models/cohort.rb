@@ -3,4 +3,5 @@ class Cohort < ApplicationRecord
     
     validates :name, presence: true
     validates :number_of_students, presence: true, numericality: { greater_than: 0 }
+    
 end
