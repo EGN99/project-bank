@@ -1,33 +1,45 @@
 class SessionsController < ApplicationController
 
- # logging the Admin in
 
-    def logAdmin
-        # insert code here
-        
-    end
+    # logging the Admin in
+   
+       def logAdmin
+           # insert code here
+          admin = Admin.find_by(email: login_params[:email])
+           if admin&.authenticate(login_params[:password])
+               session[:user_id]= admin.id
+               render json: admin, status: :accepted
+           else
+               render json: { error: "Invalid email or password"}, status: :not_found
+           end
+           
+     
+   
+   
+   # logging the student in
+   
+       def logStudent
+   
+           student = Student.find_by(email: login_params[:email])
+           if student&.authenticate(login_params[:password])
+               session[:user_id]= student.id
+               render json: student, status: :accepted
+           else
+               render json: { error: "Invalid username or password"}, status: :not_found
+           end
+           
+       end
+   
+   
+   # loging out for both the student and the admin
+   
+       def destroy
+           session.delete :user_id
+           head :no_content
+       end
+   
+     
 
-
-# logging the student in
-
-    def logStudent
-
-        student = Student.find_by(email: login_params[:email])
-        if student&.authenticate(login_params[:password])
-            session[:user_id]= student.id
-            render json: student, status: :accepted
-        else
-            render json: { error: "Invalid email or password"}, status: :not_found
-        end
-    end
-
-
-# loging out for both the student and the admin
-
-    def destroy
-        session.delete :user_id
-        head :no_content
-    end
 
     def password_reset
         # Find the user by email
@@ -59,3 +71,4 @@ class SessionsController < ApplicationController
         params.permit(:email, :password)
     end
 end
+

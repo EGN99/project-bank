@@ -1,13 +1,15 @@
 class CoursesController < ApplicationController
-    def  index
-        #all courses
-        @courses = Course.all
-        render json: @courses
-    end
 
-    def show
+    # GET /courses
+    def index
+        @courses = Course.all 
+        render json: @courses 
+    end
+    
+    # GET /courses/:id
+    def show 
         @course = Course.find(params[:id])
-        render json: @course
+        render json: @course 
     end
 
 end

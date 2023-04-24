@@ -1,5 +1,29 @@
 Rails.application.routes.draw do
-    resources :students, only: [:index, :password_reset]
+
+
+  # routes for courses 
+  resources :courses 
+  
+
+  #routes for students
+  resources :students, only: [:index, :create, :show]
+
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Defines the root path route ("/")
+  # root "articles#index"
+  #sign ip for admin
+  post "/adminssignup", to:"admins#create"
+  #route for loging in an admin
+  post "/admin_login", to: "sessions#logAdmin"
+  #route to logout
+  delete "/logout", to: "sessions#destroy"
+
+  # devise_for :admins
+
+   
+
+   resources :students, only: [:index, :password_reset]
 
     #routes for course
     resources :courses
@@ -10,8 +34,8 @@ Rails.application.routes.draw do
     end
      
 
-
     #route for getting projects under each course
+
     resources :courses do
       resources :projects
     end
@@ -35,5 +59,11 @@ Rails.application.routes.draw do
 
     post '/password_reset', to: 'sessions#password_reset'
     
-  end
+    get 'password_reset/:id/edit', to: 'password_reset#edit'
+    patch 'password_reset/:id', to: 'password_reset#update'
   
+  
+  end
+end
+
+
