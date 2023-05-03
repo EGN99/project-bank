@@ -3,6 +3,17 @@ class ProjectsController < ApplicationController
     #before_action :set_project, only: [:show]
 
     #all projects unders each course
+
+    def allprojects
+        @projects = Project.all
+        render json: @projects
+    end
+
+    def singleproject
+        @project = Project.find(params[:id])
+        render json: @project 
+    end
+    
     def index
         @course = Course.find(params[:course_id])
         @projects = @course.projects

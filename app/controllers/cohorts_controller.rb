@@ -1,6 +1,10 @@
 class CohortsController < ApplicationController
 
     #show all cohorts 
+    def allcohorts
+        @cohorts = Cohort.all
+        render json: @cohorts
+    end
     def index
         @course = Course.find(params[:course_id])
         @cohorts = @course.cohorts

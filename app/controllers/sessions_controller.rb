@@ -9,17 +9,27 @@ class SessionsController < ApplicationController
 
 
 # logging the student in
-
-    def logStudent
-
-        student = Student.find_by(email: login_params[:email])
-        if student&.authenticate(login_params[:password])
-            session[:user_id]= student.id
-            render json: student, status: :accepted
-        else
-            render json: { error: "Invalid email or password"}, status: :not_found
-        end
+def login
+    user = Admin.find_by(email: login_params[:email])
+    user ||= Student.find_by(email: login_params[:email])
+    
+    if user&.authenticate(login_params[:password])
+      session[:user_id] = user.id
+      render json: user, status: :accepted
+    else
+      render json: { error: "Invalid email or password" }, status: :not_found
     end
+end
+def logged_in
+    current_user = Admin.find_by(id: session[:user_id])
+    current_user ||= Student.find_by(id: session[:user_id])
+    if(current_user)
+       render json: [current_user]
+    else
+       render json: {loggedin: false}
+    end      
+end
+  
 
 
 # loging out for both the student and the admin
