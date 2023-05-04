@@ -5,6 +5,18 @@ class CohortsController < ApplicationController
         @cohorts = Cohort.all
         render json: @cohorts
     end
+    def cohort
+        @cohort = Cohort.find(params[:id])
+        render json: @cohort
+    end
+    def deletecohort
+        @cohort = Cohort.find(params[:id])
+        @cohort.destroy
+        return render json: {message: 'cohort deleted successfully'}
+    end
+
+
+
     def index
         @course = Course.find(params[:course_id])
         @cohorts = @course.cohorts
