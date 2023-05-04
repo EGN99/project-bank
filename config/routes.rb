@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       resources :cohorts
     end
     get "/cohorts", to:"cohorts#allcohorts"
+    get "/cohorts/:id", to:"cohorts#cohort"
+    delete "/cohorts/:id", to:"cohorts#deletecohort"
+
 
    
      
