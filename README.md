@@ -67,3 +67,11 @@ Navigate to the project directory cd project-eleven-backend
 Install dependencies bundle install
 Set up the database rails db:setup
 Run the
+
+## Developers
+Isaac Tonyloi
+Caroline
+Elvis
+
+## License
+MIT
