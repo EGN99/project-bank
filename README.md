@@ -62,11 +62,17 @@ These endpoints allow for the viewing, creation, editing, and deletion of studen
 ## Installation and Setup
 To set up the Project Eleven backend locally, follow these steps:
 
-Clone the repository git clone 
-Navigate to the project directory cd project-eleven-backend
-Install dependencies bundle install
-Set up the database rails db:setup
-Run the
+- Clone the repository git clone 
+- Navigate to the project directory cd project-eleven-backend
+- Install dependencies bundle install
+- Set up the database rails db:migration and rails db:seed
+
+- Run the frontend https://github.com/joanne-cmd/project-bank2 using npm start 
+
+## Login Credentials
+
+Student - email: "isaac.tonyloi@student.moringaschool.com", password: "isaac123"
+Admin - email: "isaac.tonyloi@admin.moringaschool.com", password: "isaacadmin123"
 
 ## Developers
 Isaac Tonyloi
